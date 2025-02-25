@@ -1,0 +1,9 @@
+{
+  "firstname": "Anupam",
+  "lastname": "Gollapalli",
+  "age": 24,
+  "address": {
+    "apt": 142,
+    "street": "mahaveer calyx"
+  }
+}
