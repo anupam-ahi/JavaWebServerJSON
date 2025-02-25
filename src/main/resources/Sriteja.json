@@ -1,0 +1,9 @@
+{
+  "firstname": "Sriteja",
+  "lastname": "Devarakonda",
+  "age": 14,
+  "address": {
+    "apt": 4042,
+    "street": "ashbrook"
+  }
+}
