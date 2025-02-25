@@ -1,6 +1,8 @@
 # JavaWebServerJSON
 Java web server to process JSON date from Post request body
 
+endpoints: /firstname
+
 Things that I learnt so far from this project:
 
 1. Data Serialization and Deserialization using ObjectMapper and Gson package
