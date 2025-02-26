@@ -29,7 +29,7 @@ public class Endpoints {
     public Endpoints() throws IOException {
         try(InputStream schemaStream = new ClassPathResource("JsonValidator.json").getInputStream()) {
             JsonNode schemaNode = objectMapper.readTree(schemaStream);
-            JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
+            JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012);
             this.jsonSchema = factory.getSchema(schemaNode);
         }
     }

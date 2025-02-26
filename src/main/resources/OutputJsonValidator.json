@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "lastname": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "apt": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 68
+        }
+      },
+      "required": ["apt"]
+    }
+  },
+  "required": ["firstname", "lastname", "age", "address"]
+}
