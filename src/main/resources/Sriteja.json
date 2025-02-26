@@ -1,9 +1,9 @@
 {
-  "firstname": "Sriteja",
-  "lastname": "Devarakonda",
+  "firstname": "Snow",
+  "lastname": "D",
   "age": 14,
   "address": {
-    "apt": 4042,
-    "street": "ashbrook"
+    "apt": 4567,
+    "street": "brook"
   }
 }
