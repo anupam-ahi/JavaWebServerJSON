@@ -1,12 +1,12 @@
 package org.example.apitesting;
 
 public class AddressDTO {
-    private String apt;
+    private int apt;
     private String street;
-    public void setApt(String apt) {
+    public void setApt(int apt) {
         this.apt = apt;
     }
-    public String getApt() {
+    public int getApt() {
         return this.apt;
     }
     public void setStreet(String street) {

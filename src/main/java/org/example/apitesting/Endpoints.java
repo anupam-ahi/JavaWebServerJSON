@@ -64,6 +64,19 @@ public class Endpoints {
         }
         OutputPerson outputPerson = objectMapper.readValue(jsonContent.toString(), OutputPerson.class);
         JsonNode responseJson = objectMapper.valueToTree(outputPerson);
+        try (InputStream responseSchemaStream = new ClassPathResource("OutputJsonValidator.json").getInputStream()) {
+            JsonNode responseSchemaNode = objectMapper.readTree(responseSchemaStream);
+            JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012);
+            JsonSchema responseSchema = factory.getSchema(responseSchemaNode);
+
+            Set<ValidationMessage> responseErrors = responseSchema.validate(responseJson);
+            if (!responseErrors.isEmpty()) {
+                JsonNode errorResponse = objectMapper.createObjectNode()
+                        .put("error", "Invalid JSON response")
+                        .put("details", responseErrors.toString());
+                return ResponseEntity.internalServerError().body(errorResponse);
+            }
+        }
         return ResponseEntity.ok(responseJson);
     }
 }

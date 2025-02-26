@@ -4,15 +4,16 @@
   "properties": {
     "firstname": {
       "type": "string",
-      "maxLength": 25
+      "maxLength": 7
     },
     "lastname": {
       "type": "string",
-      "maxLength": 25
+      "maxLength": 7
     },
     "age": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "maximum": 100
     },
     "address": {
       "type": "object",
@@ -21,6 +22,9 @@
           "type": "integer",
           "minimum": 1,
           "maximum": 68
+        },
+        "street": {
+          "type": "string"
         }
       },
       "required": ["apt"]
